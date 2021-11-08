@@ -33,7 +33,9 @@ opt.add_experimental_option("prefs", { \
     "profile.default_content_setting_values.geolocation": 1, 
     "profile.default_content_setting_values.notifications": 1 
   })
-DEBUG=True
+logging.basicConfig(filename="debug_info.log",format='%(asctime)s %(message)s',filemode='w')
+logger=logging.getLogger()
+logger.setLevel(logging.DEBUG)
 driver=webdriver.Chrome(executable_path=r"chromedriver.exe",options=opt)
 # Fill Your Credentials :
 USER_CREDS={"email":"","password":""}
@@ -75,6 +77,7 @@ def join_class(class_name,start_time,end_time):
         notify("no-join-button",class_name,start_time,end_time)
     # Clicked On Join Button, Now Click On Disable Microphone And Disable Video
     print(f"Joining {class_name} Class!")
+    logger.debug(f"Joining {class_name} Class!")
     time.sleep(5)
     video=driver.find_element_by_xpath('//*[@id="page-content-wrapper"]/div[1]/div/calling-pre-join-screen/div/div/div[2]/div[1]/div[2]/div/div/section/div[2]/toggle-button[1]/div/button/span[1]')
     video_title=video.get_attribute("title").lower()
@@ -90,6 +93,7 @@ def join_class(class_name,start_time,end_time):
     time.sleep(2)
     join_now_button.click()
     print(f"Successfully Joined {class_name.title()} Class!")
+    logger.debug(f"Joined {class_name} Class!")
     notify("joined-successfully",class_name,start_time,end_time)
     class_time=datetime.strptime(end_time,"%H:%M") - datetime.strptime(start_time,"%H:%M")
     time.sleep(class_time.seconds)
@@ -99,6 +103,7 @@ def join_class(class_name,start_time,end_time):
     driver.find_element_by_xpath('//*[@id="hangup-button"]').click()
     print(f"Left {class_name} Class!")
     notify("left-class",class_name,start_time,end_time)
+    logger.debug(f"Left {class_name} Class!")
 def notify(event,class_name,join_time,leaving_time):
     # Add Your Webhook URL :
     WEBHOOK_URL=""
@@ -125,6 +130,7 @@ def notify(event,class_name,join_time,leaving_time):
     webhook.send()
     print("Information Sent To Discord!")
 if __name__ == "__main__":
+    logger.debug("Bot Started!")
     login(USER_CREDS["email"],USER_CREDS["password"])
     # Add Your Own Timetable (Duplicate Tasks) :
     # Format : 24h // 00:00
