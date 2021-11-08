@@ -33,7 +33,7 @@ opt.add_experimental_option("prefs", { \
     "profile.default_content_setting_values.geolocation": 1, 
     "profile.default_content_setting_values.notifications": 1 
   })
-logging.basicConfig(filename="debug_info.log",format='%(asctime)s %(message)s',filemode='w')
+logging.basicConfig(filename="debug_info.txt",format='%(asctime)s %(message)s',filemode='w')
 logger=logging.getLogger()
 logger.setLevel(logging.DEBUG)
 driver=webdriver.Chrome(executable_path=r"chromedriver.exe",options=opt)
