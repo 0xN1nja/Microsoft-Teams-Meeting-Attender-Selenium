@@ -143,3 +143,4 @@ if __name__ == "__main__":
     # Run Pending Tasks
     while True:
         schedule.run_pending()
+        time.sleep(1)
