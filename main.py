@@ -126,40 +126,20 @@ def notify(event,class_name,join_time,leaving_time):
     print("Information Sent To Discord!")
 if __name__ == "__main__":
     login(USER_CREDS["email"],USER_CREDS["password"])
-    # Add Your Own Timetable :
+    # Add Your Own Timetable (Duplicate Tasks) :
+    # Format : 24h
     # Schedule For Monday
-    schedule.every().monday.at("9:20").do(join_class("sst","9:20","10:00"))
-    schedule.every().monday.at("10:05").do(join_class("chemistry","10:05","10:45"))
-    schedule.every().monday.at("11:05").do(join_class("english","11:05","11:45"))
-    schedule.every().monday.at("11:50").do(join_class("maths","11:50","12:30"))
-    schedule.every().monday.at("12:35").do(join_class("biology","12:35","13:15"))
+    schedule.every().monday.at("start time").do(join_class("class name","start time","leaving time"))
     # Schedule For Tuesday
-    schedule.every().tuesday.at("9:20").do(join_class("sst","9:20","10:00"))
-    schedule.every().tuesday.at("10:05").do(join_class("physics","10:05","10:45"))
-    schedule.every().tuesday.at("11:50").do(join_class("maths","11:50","12:30"))
-    schedule.every().tuesday.at("12:35").do(join_class("english","12:35","13:15"))
+    schedule.every().tuesday.at("start time").do(join_class("class name","start time","leaving time"))
     # Schedule For Wednesday
-    schedule.every().wednesday.at("9:20").do(join_class("sst","9:20","10:00"))
-    schedule.every().wednesday.at("11:05").do(join_class("english","11:05","11:45"))
-    schedule.every().wednesday.at("11:50").do(join_class("hindi","11:50","12:30"))
-    schedule.every().wednesday.at("12:35").do(join_class("maths","12:35","13:15"))
+    schedule.every().wednesday.at("start time").do(join_class("class name","start time","leaving time"))
     # Schedule For Thursday
-    schedule.every().thursday.at("9:20").do(join_class("sst","9:20","10:00"))
-    schedule.every().thursday.at("10:05").do(join_class("maths","10:05","10:45"))
-    schedule.every().thursday.at("11:05").do(join_class("hindi","11:05","11:45"))
-    schedule.every().thursday.at("11:50").do(join_class("english","11:50","12:30"))
-    schedule.every().thursday.at("12:35").do(join_class("biology","12:35","13:15"))
+    schedule.every().thursday.at("start time").do(join_class("class name","start time","leaving time"))
     # Schedule For Friday
-    schedule.every().friday.at("9:20").do(join_class("sst","9:20","10:00"))
-    schedule.every().friday.at("11:05").do(join_class("hindi","11:05","11:45"))
-    schedule.every().friday.at("11:50").do(join_class("maths","11:50","12:30"))
-    schedule.every().friday.at("12:35").do(join_class("english","12:35","13:15"))
+    schedule.every().friday.at("start time").do(join_class("class name","start time","leaving time"))
     # Schedule For Saturday
-    schedule.every().saturday.at("9:20").do(join_class("hindi","9:20","10:00"))
-    schedule.every().saturday.at("10:05").do(join_class("computer","10:05","10:45"))
-    schedule.every().saturday.at("11:05").do(join_class("chemistry","11:05","11:45"))
-    schedule.every().saturday.at("11:50").do(join_class("physics","11:50","12:30"))
-    schedule.every().saturday.at("12:35").do(join_class("hindi","12:35","13:15"))
+    schedule.every().saturday.at("start time").do(join_class("class name","start time","leaving time"))
     # Run Pending Tasks
     while True:
         schedule.run_pending()
