@@ -50,10 +50,11 @@ def login(email,password):
     WebDriverWait(driver,10000000).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="idSIButton9"]')))
     stay_signed_in=driver.find_element_by_xpath('//*[@id="idSIButton9"]').click()
     print("Login Success")
+    logger.debug("Login Success!")
 def join_class(class_name,start_time,end_time):
     WebDriverWait(driver,100000).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="personDropdown"]')))
-    try_time = int(start_time.split(":")[1]) + 15
-    try_time = start_time.split(":")[0] + ":" + str(try_time)
+    try_time=int(start_time.split(":")[1]) + 15
+    try_time=start_time.split(":")[0] + ":" + str(try_time)
     class_list_in_grid_span=driver.find_elements_by_class_name("name-channel-type")
     for i in class_list_in_grid_span:
         if class_name.lower() in i.get_attribute("innerHTML").lower():
@@ -70,10 +71,12 @@ def join_class(class_name,start_time,end_time):
         MAX_SEARCHING_TIME=15
         while i<MAX_SEARCHING_TIME:
             print("Join Button Not Found, Refreshing.")
+            logger.debug(f"Join Button Not Found, Refreshing.")
             driver.refresh()
             join_class(class_name,"","")
             i+=1
         print(f"Join Button Not Found After Searching {MAX_SEARCHING_TIME} Minutes.")
+        logger.debug(f"Join Button Not Found After Searching {MAX_SEARCHING_TIME} Minutes.")
         notify("no-join-button",class_name,start_time,end_time)
     # Clicked On Join Button, Now Click On Disable Microphone And Disable Video
     print(f"Joining {class_name} Class!")
