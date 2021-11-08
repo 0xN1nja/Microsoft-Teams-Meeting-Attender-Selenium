@@ -127,19 +127,19 @@ def notify(event,class_name,join_time,leaving_time):
 if __name__ == "__main__":
     login(USER_CREDS["email"],USER_CREDS["password"])
     # Add Your Own Timetable (Duplicate Tasks) :
-    # Format : 24h
+    # Format : 24h // 00:00
     # Schedule For Monday
-    schedule.every().monday.at("start time").do(join_class("class name","start time","leaving time"))
+    schedule.every().monday.at("start time").do(join_class,"class name","start time","leaving time")
     # Schedule For Tuesday
-    schedule.every().tuesday.at("start time").do(join_class("class name","start time","leaving time"))
+    schedule.every().tuesday.at("start time").do(join_class,"class name","start time","leaving time")
     # Schedule For Wednesday
-    schedule.every().wednesday.at("start time").do(join_class("class name","start time","leaving time"))
+    schedule.every().wednesday.at("start time").do(join_class,"class name","start time","leaving time")
     # Schedule For Thursday
-    schedule.every().thursday.at("start time").do(join_class("class name","start time","leaving time"))
+    schedule.every().thursday.at("start time").do(join_class,"class name","start time","leaving time")
     # Schedule For Friday
-    schedule.every().friday.at("start time").do(join_class("class name","start time","leaving time"))
+    schedule.every().friday.at("start time").do(join_class,"class name","start time","leaving time")
     # Schedule For Saturday
-    schedule.every().saturday.at("start time").do(join_class("class name","start time","leaving time"))
+    schedule.every().saturday.at("start time").do(join_class,"class name","start time","leaving time")
     # Run Pending Tasks
     while True:
         schedule.run_pending()
