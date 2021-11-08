@@ -40,6 +40,8 @@ driver=webdriver.Chrome(executable_path=r"chromedriver.exe",options=opt)
 # Fill Your Credentials :
 USER_CREDS={"email":"","password":""}
 def login(email,password):
+    print("Logging In ...")
+    logger.debug("Logging In ...")
     driver.get("https://teams.microsoft.com")
     WebDriverWait(driver,1000000).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="i0116"]')))
     email_field=driver.find_element_by_xpath('//*[@id="i0116"]').send_keys(email)
