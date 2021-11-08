@@ -74,6 +74,7 @@ def join_class(class_name,start_time,end_time):
         while i<MAX_SEARCHING_TIME:
             print("Join Button Not Found, Refreshing.")
             logger.debug(f"Join Button Not Found, Refreshing.")
+            time.sleep(60)
             driver.refresh()
             join_class(class_name,"","")
             i+=1
