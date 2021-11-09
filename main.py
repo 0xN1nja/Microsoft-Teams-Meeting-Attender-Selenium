@@ -18,7 +18,7 @@ from selenium.webdriver.chrome.options import Options
 from discord_webhooks import DiscordWebhooks
 import time
 import schedule
-import datetime
+from datetime import datetime
 import logging
 opt = Options()
 opt.add_argument("--disable-infobars")
