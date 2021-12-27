@@ -1,1 +1,4 @@
 debug_info.txt
+__pycache__
+.idea
+config.txt

@@ -9,24 +9,27 @@ no-join-button : Join Button Not Found
 joined-successfully : Joined Class Successfully
 left-class : Left Class Successfully
 """
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
-from discord_webhooks import DiscordWebhooks
-import time
-import schedule
-from datetime import datetime
-import logging
+try:
+    from selenium import webdriver
+    from selenium.webdriver.common.keys import Keys
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.webdriver.chrome.options import Options
+    from discord_webhooks import DiscordWebhooks
+    import time
+    import schedule
+    from datetime import datetime
+    import logging
+except:
+    print("Modules Not Installed. Run pip install -r requirements.txt To Continue")
 opt = Options()
 opt.add_argument("--disable-infobars")
 opt.add_argument("start-maximized")
 opt.add_argument("--disable-extensions")
 opt.add_argument("--start-maximized")
 opt.add_argument("--mute-audio") # Mute Audio While Joining Class
-# opt.add_argument("--headless") # Uncomment This To Run Browser In Invisible Window
+# opt.add_argument("--headless") # Uncomment This To Run Browser In An Invisible Window
 opt.add_experimental_option("prefs", { \
     "profile.default_content_setting_values.media_stream_mic": 1, 
     "profile.default_content_setting_values.media_stream_camera": 1,
@@ -73,7 +76,7 @@ def join_class(class_name,start_time,end_time):
         MAX_SEARCHING_TIME=15
         while i<MAX_SEARCHING_TIME:
             print("Join Button Not Found, Refreshing.")
-            logger.debug(f"Join Button Not Found, Refreshing.")
+            logger.debug("Join Button Not Found, Refreshing.")
             time.sleep(60)
             driver.refresh()
             join_class(class_name,start_time,end_time)
@@ -155,4 +158,3 @@ if __name__ == "__main__":
     # Run Pending Tasks
     while True:
         schedule.run_pending()
-        time.sleep(1)
