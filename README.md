@@ -15,20 +15,20 @@ pip install -r requirements.txt
 ## How To Add Chrome Driver Path?
 #### Open `main.py` (Line 42)
 ```python
-CHROME_DRIVER_PATH=r"" # Add Chrome Driver Path
+CHROME_DRIVER_PATH=r"" # Add Chome Driver Path (Download From https://chromedriver.chromium.org/ According To Your Chrome Version)
 ```
 ### For Example (Line 42)
 ```python
-CHROME_DRIVER_PATH=r"C:\Users\Abhimanyu\chrome_driver.exe"
+CHROME_DRIVER_PATH=r"C:\Users\Abhimanyu\chrome_driver.exe" # Add Chome Driver Path (Download From https://chromedriver.chromium.org/ According To Your Chrome Version)
 ```
 # Step 2 (Add Your Credentials)
 #### Go To Line 46 And Add Your Credentials
 ```python
-USER_CREDS={"email":"","password":""}
+USER_CREDS={"email":"","password":""} # Add Your Credentials
 ```
 ### For Example (Line 46)
 ```python
-USER_CREDS={"email":"xyz@xyz.com","password":"xyz"}
+USER_CREDS={"email":"xyz@xyz.com","password":"xyz"} # Add Your Credentials
 ```
 # Step 3 (Add Your Time Table)
 ## How To Add Your Time Table?
@@ -67,11 +67,11 @@ schedule.every().thursday.at("start time").do(join_class,"class name","start tim
 ## How To Notify On Discord?
 #### Go To Line 43 And Add Webhook URL
 ```python
-WEBHOOK_URL=""
+WEBHOOK_URL="" # Add Your Webhook URL
 ```
 ### For Example (Line 43)
 ```python
-WEBHOOK_URL="https://discord.com/api/webhooks/xyz"
+WEBHOOK_URL="https://discord.com/api/webhooks/xyz" # Add Your Webhook URL
 ```
 # Step 5 (Run)
 #### Start The Bot
@@ -82,12 +82,12 @@ python main.py
 ## How To Join Class Muted?
 ### For Example (Line 31)
 ```python
-opt.add_argument("--mute-audio")
+opt.add_argument("--mute-audio") # Mute Audio While Joining Class
 ```
 ## How To Run Browser In An Invisible Window?
 ### For Example (Line 32)
 ```python
-opt.add_argument("--headless")
+opt.add_argument("--headless") # Uncomment This To Run Browser In An Invisible Window
 ```
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

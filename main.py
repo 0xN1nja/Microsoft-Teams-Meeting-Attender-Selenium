@@ -42,8 +42,7 @@ logger.setLevel(logging.DEBUG)
 CHROME_DRIVER_PATH=r"" # Add Chome Driver Path (Download From https://chromedriver.chromium.org/ According To Your Chrome Version)
 WEBHOOK_URL="" # Add Discord Webhook URL
 driver=webdriver.Chrome(executable_path=CHROME_DRIVER_PATH,options=opt)
-# Fill Your Credentials :
-USER_CREDS={"email":"","password":""}
+USER_CREDS={"email":"","password":""} # Add Your Credentials
 def login(email,password):
     print("Logging In ...")
     logger.debug("Logging In ...")
