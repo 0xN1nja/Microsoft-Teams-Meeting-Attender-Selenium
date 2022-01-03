@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 # Usage
 # Step 1 (Install And Add Chrome Driver Path)
-#### Install Chrome Driver (https://chromedriver.chromium.org/) According To Your Chrome's Version
+#### Install Chrome Driver (https://chromedriver.chromium.org/) According To Your Chrome Version
 ## How To Add Chrome Driver Path?
 #### Open `main.py` (Line 42)
 ```python
