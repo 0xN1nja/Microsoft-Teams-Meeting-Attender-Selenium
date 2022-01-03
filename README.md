@@ -71,7 +71,7 @@ WEBHOOK_URL=""
 ```
 ### For Example (Line 43)
 ```python
-WEBHOOK_URL="https://https://discord.com/api/webhooks/xyz"
+WEBHOOK_URL="https://discord.com/api/webhooks/xyz"
 ```
 # Step 5 (Run)
 #### Start The Bot
