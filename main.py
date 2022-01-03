@@ -39,7 +39,9 @@ opt.add_experimental_option("prefs", { \
 logging.basicConfig(filename="debug_info.txt",format='%(asctime)s %(message)s',filemode='w')
 logger=logging.getLogger()
 logger.setLevel(logging.DEBUG)
-driver=webdriver.Chrome(executable_path=r"chromedriver.exe",options=opt)
+CHROME_DRIVER_PATH=r"" # Add Chome Driver Path (Download From https://chromedriver.chromium.org/ According To Your Chrome Version)
+WEBHOOK_URL="" # Add Discord Webhook URL
+driver=webdriver.Chrome(executable_path=CHROME_DRIVER_PATH,options=opt)
 # Fill Your Credentials :
 USER_CREDS={"email":"","password":""}
 def login(email,password):
@@ -115,7 +117,6 @@ def join_class(class_name,start_time,end_time):
     logger.debug(f"Left {class_name} Class!")
 def notify(event,class_name,join_time,leaving_time):
     # Add Your Webhook URL :
-    WEBHOOK_URL=""
     webhook=DiscordWebhooks(WEBHOOK_URL)
     webhook.set_footer(text="--Abhimanyu Sharma")
     if event=="joined-successfully":
