@@ -65,11 +65,10 @@ schedule.every().thursday.at("start time").do(join_class,"class name","start tim
 ```
 # Step 4 (Add Webhook URL)
 ## How To Notify On Discord?
-#### Go To Line 43
+#### Go To Line 43 And Add Webhook URL
 ```python
 WEBHOOK_URL=""
 ```
-#### Add Webhook URL
 ### For Example (Line 43)
 ```python
 WEBHOOK_URL="https://https://discord.com/api/webhooks/xyz"
