@@ -1,7 +1,7 @@
 """
 Modified Version Of Microsoft Teams Class Attender (https://github.com/teja156/microsoft-teams-class-attender/)
 Author : Abhimanyu Sharma
-GitHub : https://github.com/N1nja0p
+GitHub : https://github.com/0xN1nja
 """
 """
 Events :
