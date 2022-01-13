@@ -3,7 +3,7 @@ A Bot To Attend Meetings On Microsoft Teams (Modified Version Of https://github.
 # Installation
 ### Clone Repository
 ```bash
-git clone https://github.com/N1nja0p/Microsoft-Teams-Meeting-Attender-Selenium.git
+git clone https://github.com/0xN1nja/Microsoft-Teams-Meeting-Attender-Selenium.git
 ```
 ### Install Required Modules
 ```bash
